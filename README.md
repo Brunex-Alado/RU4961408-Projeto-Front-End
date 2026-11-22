@@ -1,4 +1,3 @@
-::: {align="center"}
 # 🌵 Raízes do Nordeste
 
 ### Tecnologia, tradição e escala em uma experiência digital para uma rede de lanchonetes nordestinas.
@@ -9,7 +8,6 @@
 ![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
 ![Draw.io](https://img.shields.io/badge/Draw.io-F08705?style=for-the-badge&logo=diagrams.net&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
-:::
 
 ------------------------------------------------------------------------
 
@@ -45,58 +43,38 @@ interação de um sistema de pedidos.
 -   Documentar requisitos, casos de uso, wireframes, diagramas e testes
     do projeto.
 
+
 ## ✨ Funcionalidades
 
-  -----------------------------------------------------------------------
-  Funcionalidade                      Descrição
-  ----------------------------------- -----------------------------------
-  Página inicial                      Apresentação da marca, proposta e
-                                      acesso às principais áreas
+| Funcionalidade | Descrição |
+|---|---|
+| Página inicial | Apresentação da marca, proposta e acesso às principais áreas |
+| Unidades | Seleção da unidade de atendimento |
+| Cardápio | Visualização dos produtos e opções disponíveis |
+| Carrinho | Inclusão, remoção e revisão dos itens selecionados |
+| Checkout | Revisão dos dados e simulação da finalização do pedido |
+| Acompanhamento | Visualização das etapas e do status do pedido demonstrativo |
+| Login e perfil | Interface de acesso e identificação do cliente no protótipo |
+| Fidelidade | Demonstração do programa de pontos |
+| Administração | Interface administrativa demonstrativa |
+| Gerenciamento | Painel gerencial demonstrativo |
+| Privacidade | Informações sobre privacidade e tratamento de dados no contexto do protótipo |
 
-  Unidades                            Seleção da unidade de atendimento
 
-  Cardápio                            Visualização dos produtos e opções
-                                      disponíveis
-
-  Carrinho                            Inclusão, remoção e revisão dos
-                                      itens selecionados
-
-  Checkout                            Revisão dos dados e simulação da
-                                      finalização do pedido
-
-  Acompanhamento                      Visualização das etapas e do status
-                                      do pedido demonstrativo
-
-  Login e perfil                      Interface de acesso e identificação
-                                      do cliente no protótipo
-
-  Fidelidade                          Demonstração do programa de pontos
-
-  Administração                       Interface administrativa
-                                      demonstrativa
-
-  Gerenciamento                       Painel gerencial demonstrativo
-
-  Privacidade                         Informações sobre privacidade e
-                                      tratamento de dados no contexto do
-                                      protótipo
-  -----------------------------------------------------------------------
 
 ## 🎨 Identidade visual
 
-A identidade visual foi construída para transmitir referências à
-culinária e à cultura nordestina, com uma combinação de tons escuros,
-dourado e vinho.
+A identidade visual do **Raízes do Nordeste** foi desenvolvida para transmitir referências à culinária e à cultura nordestina, combinando tons escuros, dourado e vinho. A paleta foi aplicada para criar contraste, destacar elementos importantes e manter unidade visual entre as páginas.
 
-  Cor              Código      Aplicação conceitual
-  ---------------- ----------- -------------------------------------
-  Preto profundo   `#19171B`   Base e contraste
-  Dourado          `#D29F22`   Destaques e elementos de identidade
-  Cinza escuro     `#252628`   Superfícies e áreas de conteúdo
-  Vinho            `#5D0018`   Destaques e personalidade visual
+| Cor | Amostra | Código | Aplicação conceitual |
+|---|:---:|---|---|
+| Preto profundo | ![#19171B](https://img.shields.io/badge/-%20-19171B?style=flat-square) | `#19171B` | Base e contraste |
+| Dourado | ![#D29F22](https://img.shields.io/badge/-%20-D29F22?style=flat-square) | `#D29F22` | Destaques e elementos de identidade |
+| Cinza escuro | ![#252628](https://img.shields.io/badge/-%20-252628?style=flat-square) | `#252628` | Superfícies e áreas de conteúdo |
+| Vinho | ![#5D0018](https://img.shields.io/badge/-%20-5D0018?style=flat-square) | `#5D0018` | Destaques e personalidade visual |
 
-A interface utiliza imagens de produtos, mockups e elementos gráficos
-desenvolvidos para a apresentação da marca.
+A interface também utiliza imagens dos produtos, mockups e elementos gráficos desenvolvidos para a apresentação da marca.
+
 
 ## 📁 Estrutura do projeto
 
@@ -145,13 +123,13 @@ frameworks ou dependências para sua execução básica.
 1.  Clone o repositório:
 
 ``` bash
-git clone https://github.com/Brunex-Alado/REPOSITORIO-DO-PROJETO.git
+git clone https://github.com/Brunex-Alado/RU4961408-Projeto-Front-End
 ```
 
 2.  Acesse a pasta do projeto:
 
 ``` bash
-cd REPOSITORIO-DO-PROJETO
+cd https://github.com/Brunex-Alado/RU4961408-Projeto-Front-End
 ```
 
 3.  Abra a pasta no Visual Studio Code.
@@ -195,20 +173,22 @@ pasta própria, contemplando:
     desenvolvimento, modelagem e resultados.
 
 
+
 ## 🧪 Plano de testes
 
-A validação funcional do protótipo está organizada em cenários
-objetivos:
+A validação do protótipo está organizada em sete cenários principais. Os testes devem ser executados manualmente no navegador, registrando o resultado observado e, quando possível, uma captura de tela como evidência.
 
-  Código   Cenário
-  -------- -------------------------------------------------
-  CT01     Navegação, seleção de unidade e cardápio
-  CT02     Carrinho e validação do pedido
-  CT03     Pagamento simulado --- sucesso e falha
-  CT04     Acompanhamento do pedido
-  CT05     Perfil, consentimento, privacidade e fidelidade
-  CT06     Responsividade das telas principais
-  CT07     Usabilidade e compatibilidade básica
+| Código | Cenário | O que verificar |
+|---|---|---|
+| CT01 | Navegação, seleção de unidade e cardápio | Acesso às páginas, seleção da unidade e apresentação dos produtos correspondentes |
+| CT02 | Carrinho e validação do pedido | Inclusão, alteração e remoção de itens; revisão dos dados antes de avançar |
+| CT03 | Pagamento simulado — sucesso e falha | Comportamento da interface nos cenários de confirmação e falha simulada |
+| CT04 | Acompanhamento do pedido | Exibição das etapas e do status demonstrativo do pedido |
+| CT05 | Perfil, consentimento, privacidade e fidelidade | Interações de perfil, escolha de consentimento, acesso às informações de privacidade e demonstração dos pontos |
+| CT06 | Responsividade das telas principais | Adaptação do layout em diferentes larguras de tela, especialmente celular e desktop |
+| CT07 | Usabilidade e compatibilidade básica | Clareza da navegação, legibilidade, funcionamento dos controles e abertura nos navegadores testados |
+
+Os testes correspondem ao escopo demonstrativo do Front-end. Não representam validação de transações financeiras reais, autenticação segura no servidor, sincronização entre dispositivos ou atualização de pedidos em tempo real.
 
 
 ## ⚠️ Limitações do protótipo
@@ -235,7 +215,7 @@ produção.
 
 ## 🚀 Deploy
 
-**Demonstração online:** Link da Vercel !!!!!! --> Colocar o link
+**Demonstração online:** https://ru4961408-projeto-front-end.vercel.app
 
 ------------------------------------------------------------------------
 
@@ -245,7 +225,4 @@ Este projeto está licenciado sob a licença MIT.
 
 Consulte o arquivo [LICENSE](LICENSE) para obter mais informações.
 
-::: {align="center"}
-**Raízes do Nordeste --- tradição que inspira, tecnologia que conecta.**
-🌵
-:::
+------------------------------------------------------------------------
