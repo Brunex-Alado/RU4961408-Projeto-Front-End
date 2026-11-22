@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#19171B" name="theme-color"/>
+  <meta content="Raízes do Nordeste — tradição que alimenta bons momentos." name="description"/>
+  <title>
+   Entrar ou cadastrar | Raízes do Nordeste
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="topline">
+   Tradição que alimenta bons momentos · Sabores do Nordeste em todos os canais
+  </div>
+  <header class="navbar">
+   <div class="container nav-inner">
+    <a class="brand" href="index.html">
+     <img alt="Raízes do Nordeste" src="assets/identidade/logo.png"/>
+     <span>
+      Raízes do Nordeste
+      <small>
+       Sabores da nossa terra
+      </small>
+     </span>
+    </a>
+    <nav class="nav-links">
+     <a href="index.html">
+      Início
+     </a>
+     <a href="cardapio.html">
+      Cardápio
+     </a>
+     <a href="unidades.html">
+      Unidades
+     </a>
+     <a href="index.html#promocoes">
+      Promoções
+     </a>
+     <a href="fidelidade.html">
+      Fidelidade
+     </a>
+     <a href="index.html#historia">
+      Nossa história
+     </a>
+    </nav>
+    <div class="nav-actions">
+     <a class="btn btn-gold btn-small" href="login.html">
+      Entrar / Cadastrar
+     </a>
+     <a class="btn btn-dark btn-small" href="carrinho.html">
+      Pedido
+      <span data-cart-count="" hidden="">
+       0
+      </span>
+     </a>
+     <button aria-label="Abrir menu" class="menu-toggle">
+      ☰
+     </button>
+    </div>
+   </div>
+  </header>
+  <main>
+   <section class="page-hero">
+    <div class="container">
+     <div class="eyebrow">
+      Faça parte da nossa história
+     </div>
+     <h1>
+      Entrar ou cadastrar
+     </h1>
+     <p>
+      Conta demonstrativa para testar fidelidade e preferências no navegador.
+     </p>
+    </div>
+   </section>
+   <section class="section">
+    <div class="container" style="max-width:560px">
+     <div class="panel">
+      <form class="form-grid" id="loginForm">
+       <label>
+        Seu nome
+        <input class="field" id="name" placeholder="Como podemos chamar você?" required=""/>
+       </label>
+       <label>
+        E-mail
+        <input class="field" id="email" placeholder="voce@exemplo.com" required="" type="email"/>
+       </label>
+       <p class="subtle">
+        As preferências de fidelidade e campanhas são gerenciadas separadamente na
+        <a href="privacidade.html">
+         <u>
+          Central de Privacidade
+         </u>
+        </a>
+        .
+       </p>
+       <div class="notice">
+        Este cadastro é local e demonstrativo. Não existe autenticação em servidor nem senha real.
+       </div>
+       <button class="btn btn-wine">
+        Salvar perfil demonstrativo
+       </button>
+      </form>
+      <div id="loginResult">
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <script>
+   document.addEventListener('DOMContentLoaded',()=>{let u=JSON.parse(localStorage.getItem('raizes_user')||'null');if(u){document.getElementById('name').value=u.name||'';document.getElementById('email').value=u.email||'';}document.getElementById('loginForm').addEventListener('submit',e=>{e.preventDefault();let user={name:document.getElementById('name').value.trim(),email:document.getElementById('email').value.trim(),points:u?.points||0};localStorage.setItem('raizes_user',JSON.stringify(user));document.getElementById('loginResult').innerHTML='<div class="notice">Perfil demonstrativo salvo neste navegador. <a href="fidelidade.html"><u>Ver fidelidade</u></a></div>'})})
+  </script>
+  <footer class="footer">
+   <div class="container">
+    <div class="footer-grid">
+     <div>
+      <a class="brand" href="index.html">
+       <img alt="" src="assets/identidade/logo.png"/>
+       <span>
+        Raízes do Nordeste
+        <small>
+         Tradição que alimenta bons momentos
+        </small>
+       </span>
+      </a>
+      <p>
+       Receitas que carregam histórias e sabores que atravessam gerações — agora também na sua rotina digital.
+      </p>
+     </div>
+     <div>
+      <h4>
+       Institucional
+      </h4>
+      <p>
+       <a href="index.html#historia">
+        Nossa história
+       </a>
+      </p>
+      <p>
+       <a href="unidades.html">
+        Nossas unidades
+       </a>
+      </p>
+      <p>
+       <a href="index.html#canais">
+        Como pedir
+       </a>
+      </p>
+     </div>
+     <div>
+      <h4>
+       Atendimento
+      </h4>
+      <p>
+       <a href="cardapio.html">
+        Cardápio
+       </a>
+      </p>
+      <p>
+       <a href="acompanhamento.html">
+        Acompanhar pedido
+       </a>
+      </p>
+      <p>
+       <a href="fidelidade.html">
+        Fidelidade
+       </a>
+      </p>
+     </div>
+     <div>
+      <h4>
+       Privacidade
+      </h4>
+      <p>
+       <a href="privacidade.html">
+        Política de privacidade
+       </a>
+      </p>
+      <p>
+       Projeto acadêmico — UNINTER
+      </p>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <span>
+      © 2026 Raízes do Nordeste · Bruno de Sousa Silva - RU 4961408.
+     </span>
+     <span>
+      Pedidos e pagamentos são simulados no navegador.
+     </span>
+    </div>
+   </div>
+  </footer>
+  <div class="cookie" id="cookie">
+   <p>
+    <strong>
+     Privacidade em primeiro lugar.
+    </strong>
+    Este protótipo usa armazenamento local para simular carrinho, unidade e pedido.
+    <a href="privacidade.html">
+     <u>
+      Saiba mais
+     </u>
+    </a>
+    .
+   </p>
+   <div class="cookie-actions">
+    <button class="btn btn-gold btn-small" onclick="localStorage.setItem('raizes_cookie','aceito');document.getElementById('cookie').classList.remove('show')">
+     Entendi
+    </button>
+    <button class="btn btn-outline btn-small" onclick="document.getElementById('cookie').classList.remove('show')">
+     Fechar
+    </button>
+   </div>
+  </div>
+  <script src="js/login.js">
+  </script>
+  <div class="toast" hidden="" id="toast">
+  </div>
+  <script src="js/data.js">
+  </script>
+ </body>
+</html>
+

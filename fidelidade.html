@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#19171B" name="theme-color"/>
+  <meta content="Raízes do Nordeste — tradição que alimenta bons momentos." name="description"/>
+  <title>
+   Fidelidade | Raízes do Nordeste
+  </title>
+  <link href="css/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="topline">
+   Tradição que alimenta bons momentos · Sabores do Nordeste em todos os canais
+  </div>
+  <header class="navbar">
+   <div class="container nav-inner">
+    <a class="brand" href="index.html">
+     <img alt="Raízes do Nordeste" src="assets/identidade/logo.png"/>
+     <span>
+      Raízes do Nordeste
+      <small>
+       Sabores da nossa terra
+      </small>
+     </span>
+    </a>
+    <nav class="nav-links">
+     <a href="index.html">
+      Início
+     </a>
+     <a href="cardapio.html">
+      Cardápio
+     </a>
+     <a href="unidades.html">
+      Unidades
+     </a>
+     <a href="index.html#promocoes">
+      Promoções
+     </a>
+     <a href="fidelidade.html">
+      Fidelidade
+     </a>
+     <a href="index.html#historia">
+      Nossa história
+     </a>
+    </nav>
+    <div class="nav-actions">
+     <a class="btn btn-gold btn-small" href="login.html">
+      Entrar / Cadastrar
+     </a>
+     <a class="btn btn-dark btn-small" href="carrinho.html">
+      Pedido
+      <span data-cart-count="" hidden="">
+       0
+      </span>
+     </a>
+     <button aria-label="Abrir menu" class="menu-toggle">
+      ☰
+     </button>
+    </div>
+   </div>
+  </header>
+  <main>
+   <section class="page-hero">
+    <div class="container">
+     <div class="eyebrow">
+      Obrigado por fazer parte
+     </div>
+     <h1>
+      Fidelidade Raízes
+     </h1>
+     <p>
+      Participe mediante consentimento explícito e acompanhe seus benefícios demonstrativos.
+     </p>
+    </div>
+   </section>
+   <section class="section">
+    <div class="container layout-two">
+     <div class="panel">
+      <div class="eyebrow">
+       Seu saldo
+      </div>
+      <h2 id="points" style="font:600 3.6rem var(--heading);margin:5px 0">
+       0 pontos
+      </h2>
+      <p class="subtle" id="greeting">
+       Entre ou cadastre um perfil demonstrativo para visualizar seus pontos.
+      </p>
+      <a class="btn btn-wine" href="login.html">
+       Acessar perfil
+      </a>
+     </div>
+     <div class="panel">
+      <h2>
+       Como funciona
+      </h2>
+      <p>
+       Na demonstração, cada R$ 1,00 em pedido com pagamento aprovado gera 1 ponto inteiro, desde que haja consentimento ativo para fidelização. Pedidos recusados ou não concluídos não geram pontos.
+      </p>
+      <div class="notice" id="loyaltyConsentNotice">
+       Os pontos ficam no armazenamento local do navegador e não representam um programa real de benefícios.
+      </div>
+      <a class="btn btn-outline btn-small" href="privacidade.html">
+       Gerenciar consentimento de privacidade
+      </a>
+     </div>
+    </div>
+    <div class="container" style="margin-top:24px">
+     <div class="section-head">
+      <div>
+       <div class="eyebrow">
+        Benefícios demonstrativos
+       </div>
+       <h2>
+        Troque pontos por
+        <span>
+         momentos.
+        </span>
+       </h2>
+      </div>
+     </div>
+     <div class="product-grid">
+      <article class="panel">
+       <div class="eyebrow">
+        100 pontos
+       </div>
+       <h3>
+        Café por nossa conta
+       </h3>
+       <p class="subtle">
+        Recompensa de demonstração.
+       </p>
+       <button class="btn btn-wine btn-small" onclick="redeem(100,'Café por nossa conta')">
+        Resgatar
+       </button>
+      </article>
+      <article class="panel">
+       <div class="eyebrow">
+        250 pontos
+       </div>
+       <h3>
+        Desconto em um lanche
+       </h3>
+       <p class="subtle">
+        Recompensa de demonstração.
+       </p>
+       <button class="btn btn-wine btn-small" onclick="redeem(250,'Desconto em um lanche')">
+        Resgatar
+       </button>
+      </article>
+      <article class="panel">
+       <div class="eyebrow">
+        500 pontos
+       </div>
+       <h3>
+        Combo regional
+       </h3>
+       <p class="subtle">
+        Recompensa de demonstração.
+       </p>
+       <button class="btn btn-wine btn-small" onclick="redeem(500,'Combo regional')">
+        Resgatar
+       </button>
+      </article>
+     </div>
+    </div>
+   </section>
+  </main>
+  <script>
+   function loadUser() {
+    let u=JSON.parse(localStorage.getItem('raizes_user')||'null'),
+    c=Raizes.getConsent(),
+    allowed=!!c?.loyalty;
+    document.getElementById('points').textContent=(u?.points||0)+' pontos';
+    document.getElementById('greeting').textContent=u?(allowed?'Olá, '+u.name+'. Seus pontos estão salvos neste navegador.':'Olá, '+u.name+'. Para acumular novos pontos, autorize a fidelização na Política de Privacidade.'):'Entre ou cadastre um perfil demonstrativo para visualizar seus pontos.';
+    document.getElementById('loyaltyConsentNotice').textContent=allowed?'Consentimento para fidelização ativo neste navegador. Você pode retirá-lo a qualquer momento na Política de Privacidade.':'Consentimento para fidelização não ativo. Para acumular pontos, revise e autorize as finalidades na Política de Privacidade.'
+}
+
+function redeem(points,name) {
+    let u=JSON.parse(localStorage.getItem('raizes_user')||'null');
+    if(!u) {
+        Raizes.toast('Cadastre um perfil demonstrativo primeiro.');
+        return
+    }
+
+    let consent=Raizes.getConsent();
+    if(!consent?.loyalty) {
+        Raizes.toast('Autorize a fidelização na Política de Privacidade primeiro.');
+        return
+    }
+
+    if((u.points||0)<points) {
+        Raizes.toast('Você ainda não tem pontos suficientes.');
+        return
+    }
+
+    u.points-=points;
+    u.rewards=u.rewards||[];
+    u.rewards.push({name,at:new Date().toISOString()});
+    localStorage.setItem('raizes_user',JSON.stringify(u));
+    loadUser();
+    Raizes.toast(name+' resgatado na simulação.')
+}
+
+document.addEventListener('DOMContentLoaded',loadUser)
+  </script>
+  <footer class="footer">
+   <div class="container">
+    <div class="footer-grid">
+     <div>
+      <a class="brand" href="index.html">
+       <img alt="" src="assets/identidade/logo.png"/>
+       <span>
+        Raízes do Nordeste
+        <small>
+         Tradição que alimenta bons momentos
+        </small>
+       </span>
+      </a>
+      <p>
+       Receitas que carregam histórias e sabores que atravessam gerações — agora também na sua rotina digital.
+      </p>
+     </div>
+     <div>
+      <h4>
+       Institucional
+      </h4>
+      <p>
+       <a href="index.html#historia">
+        Nossa história
+       </a>
+      </p>
+      <p>
+       <a href="unidades.html">
+        Nossas unidades
+       </a>
+      </p>
+      <p>
+       <a href="index.html#canais">
+        Como pedir
+       </a>
+      </p>
+     </div>
+     <div>
+      <h4>
+       Atendimento
+      </h4>
+      <p>
+       <a href="cardapio.html">
+        Cardápio
+       </a>
+      </p>
+      <p>
+       <a href="acompanhamento.html">
+        Acompanhar pedido
+       </a>
+      </p>
+      <p>
+       <a href="fidelidade.html">
+        Fidelidade
+       </a>
+      </p>
+     </div>
+     <div>
+      <h4>
+       Privacidade
+      </h4>
+      <p>
+       <a href="privacidade.html">
+        Política de privacidade
+       </a>
+      </p>
+      <p>
+       Projeto acadêmico — UNINTER
+      </p>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <span>
+      © 2026 Raízes do Nordeste · Bruno de Sousa Silva - RU 4961408.
+     </span>
+     <span>
+      Pedidos e pagamentos são simulados no navegador.
+     </span>
+    </div>
+   </div>
+  </footer>
+  <div class="cookie" id="cookie">
+   <p>
+    <strong>
+     Privacidade em primeiro lugar.
+    </strong>
+    Este protótipo usa armazenamento local para simular carrinho, unidade e pedido.
+    <a href="privacidade.html">
+     <u>
+      Saiba mais
+     </u>
+    </a>
+    .
+   </p>
+   <div class="cookie-actions">
+    <button class="btn btn-gold btn-small" onclick="localStorage.setItem('raizes_cookie','aceito');document.getElementById('cookie').classList.remove('show')">
+     Entendi
+    </button>
+    <button class="btn btn-outline btn-small" onclick="document.getElementById('cookie').classList.remove('show')">
+     Fechar
+    </button>
+   </div>
+  </div>
+  <script src="js/fidelidade.js">
+  </script>
+  <div class="toast" hidden="" id="toast">
+  </div>
+  <script src="js/data.js">
+  </script>
+ </body>
+</html>
+
